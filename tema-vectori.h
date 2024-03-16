@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <string.h>
 using namespace std;
@@ -160,10 +160,6 @@ bool palXXL(int v[], int dim) {
 	return palindrom(numar);
 }
 
-bool VerifParitate2(int v[], int dim) {
-
-	return 0;
-}
 
 int distinct(int n) {
 
@@ -190,3 +186,77 @@ bool cifreDistincte(int v[], int dim) {
 	return true;
 }
 
+
+//CORECTAREA TEMEI
+
+// Se dă un vector cu n numere naturale, n fiind număr par. Să se verifice dacă toate perechile de elemente egal depărtate de capetele vectorului au elemente cu parități diferite.
+
+bool verifParitate2(int v[], int dim) {
+
+	for (int i = 0, j = dim - 1; i < j; i++, j--) {
+
+
+		if ((v[i] % 2 != v[j] % 2)) {
+			return true;
+		}
+
+	}
+	return false;
+}
+
+int sir_munte(int v[], int dim) {
+	///////////////////////////////////////////
+	int max = 0;
+	///////////////////////////////////////////
+	for (int i = 0; i < dim; i++) {
+		if(v[i] > max) {
+			max = v[i];
+			///////////////////////////////////////////
+		}
+		if (max < v[max - 1] && max > v[max + 1]) {
+			return false;
+		}
+	}
+	///////////////////////////////////////////
+	return true;
+}
+
+
+//Se dă un şir cu n elemente, numere naturale. Să se verifice dacă există în şir elemente care să aibă ambii vecini de aceeaşi paritate cu el.
+bool vecini(int v[], int dim) {
+
+	for (int i = 1; i < dim - 1; i++) {
+
+		if (v[i] % 2 != v[i - 1] % 2 || v[i] % 2 != v[i + 1] % 2) {
+			return false;
+		}
+	}
+	return true;
+}
+
+// Se dă un vector x cu n elemente numere naturale, și un vector y cu m elemente, de asemenea numere naturale. Verificați pentru fiecare element al vectorului y dacă apare în x.
+
+bool findElementVec(int v[],int dim ,int element) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if (v[i] == element) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void cautarea(int v1[], int dim1, int v2[], int dim2) {
+
+	for (int i = 0; i < dim1; i++) {
+
+		if (findElementVec(v2,dim2,v1[i])) {
+			cout << v1[i] << " " << "1" <<  endl;
+		}
+		else {
+			cout << v1[i] << " " << "0" << endl;
+		}
+	}
+
+}

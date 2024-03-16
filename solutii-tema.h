@@ -119,3 +119,62 @@ void sol10() {
 		cout << " NU " << endl;
 	}
 }
+
+void sol11() {
+
+	int date[6] = { 51,10,1,21,35,40 };
+
+	if (verifParitate2(date, 6)) {
+
+		cout << " DA " << endl;	
+	}
+	else {
+		cout << " NU " << endl;
+	}
+}
+
+void sol12() {
+
+	int date[5] = { 1,2,3,4,5 };
+
+	if (sir_munte(date, 5)) {
+		cout << " DA " << endl;
+	}
+	else {
+		cout << " NU " << endl;
+	}
+}
+
+void sol13() {
+
+	int date[5] = { 803,60,102,408,6 };
+
+	if (vecini(date, 5)) {
+		cout << " DA " << endl;
+	}
+	else {
+		cout << " NU " << endl;
+	}
+
+}
+
+void test1() {
+
+	int date1[7] = { 9,6,5,14,2,1,10 };
+	int element = 2;
+	if (findElementVec(date1, 7, 2)) {
+		cout << " exista " << endl;
+	}
+	else {
+		cout << " NU exista" << endl;
+	}
+
+}
+
+void sol15() {
+
+	int date1[7] = { 9,6,5,14,2,1,10 };
+	int date2[8] = { 8,14,9,14,16,15,4,2 };
+	
+	cautarea(date2, 8, date1, 7);
+}
