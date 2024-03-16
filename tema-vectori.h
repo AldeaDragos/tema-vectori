@@ -128,3 +128,65 @@ bool egaleOglindit(int v[],int dim){
 	return false;
 }
 
+int rasturnatNumar(int n) {
+
+	int rasturnat = 0;
+
+	while (n != 0) {
+		int cifra = n % 10;
+		rasturnat = rasturnat * 10 + cifra;
+		n = n / 10;
+	}
+	return rasturnat;
+}
+
+
+bool palindrom(int  n) {
+
+	int inv = rasturnatNumar(n);
+
+	if (n == inv) {
+		return true;
+	}
+	return false;
+}
+
+bool palXXL(int v[], int dim) {
+
+	int numar = 0;
+	for (int i = 0; i < dim; i++) {
+		numar = numar * 10 + v[i];
+	}
+	return palindrom(numar);
+}
+
+bool VerifParitate2(int v[], int dim) {
+
+	return 0;
+}
+
+int distinct(int n) {
+
+	int cifra2 = n / 10 % 10;
+	while (n != 0) {
+		int cifra = n % 10;
+		if (cifra != cifra2) {
+			return true;
+		}
+		n = n / 10;
+	}
+	return false;
+}
+
+bool cifreDistincte(int v[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if (!distinct(v[i])) {
+			return false;
+		}
+
+	}
+	return true;
+}
+

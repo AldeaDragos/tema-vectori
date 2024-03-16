@@ -94,5 +94,28 @@ void sol8() {
 	else {
 		cout << " NU " << endl;
 	}
+}
 
+void sol9() {
+
+	int date[5] = { 1,2,3,2,1 };
+
+	if (palXXL(date, 5)) {
+		cout << "DA " << endl;
+	}
+	else {
+		cout << " NU " << endl;
+	}
+}
+
+void sol10() {
+
+	int date[5] = {84,60,102,24,6 };
+
+	if (cifreDistincte(date, 5)) {
+		cout << "DA " << endl;
+	}
+	else {
+		cout << " NU " << endl;
+	}
 }
